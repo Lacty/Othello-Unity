@@ -55,6 +55,8 @@ public class OthelloSelect : MonoBehaviour {
     bool keyS = Input.GetKeyDown(KeyCode.S);
     bool keyD = Input.GetKeyDown(KeyCode.D);
     
+    if (!(keyW || keyA || keyS || keyD)) return;
+    
     if (keyW && (_selectX < DEPTH - 1) && (_selectX >= 0)) {
       backColor();
       _selectX++;
