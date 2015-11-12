@@ -30,14 +30,14 @@ public class OthelloStone : MonoBehaviour {
     
     if (_othello.getSelectedCell().GetComponentInChildren<Stone>()) return;
     
-    CreateStone();
+    CreateStone(_othello.SelectX, _othello.SelectZ);
     
     _isBlack = !_isBlack;
   }
   
-  void CreateStone() {
+  void CreateStone(int x, int z) {
     var stone = Instantiate(Stone);
-    stone.name = string.Format("Stone({0},{1})", _othello.SelectX, _othello.SelectZ);
+    stone.name = string.Format("Stone({0},{1})", x, z);
     stone.transform.SetParent(_othello.getSelectedCell().transform);
     stone.transform.localPosition = Vector3.up;
     stone.transform.localRotation = Quaternion.AngleAxis(_isBlack ? 180f : 0f, Vector3.left);
