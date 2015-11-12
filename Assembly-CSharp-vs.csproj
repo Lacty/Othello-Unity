@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CellState.cs" />
+     <Compile Include="Assets\Scripts\OthelloPlayer.cs" />
      <Compile Include="Assets\Scripts\OthelloSelect.cs" />
      <Compile Include="Assets\Scripts\OthelloStone.cs" />
      <Compile Include="Assets\Scripts\OthelloTableView.cs" />
