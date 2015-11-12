@@ -39,7 +39,13 @@ public class OthelloSelect : MonoBehaviour {
   }
   
   private int _selectX = 0;
+  public int SelectX {
+    get { return _selectX; }
+  }
   private int _selectZ = 0;
+  public int SelectZ {
+    get { return _selectZ; }
+  }
 
 	void Start () {
 		var table = GameObject.Find("OthelloTable");
@@ -78,4 +84,8 @@ public class OthelloSelect : MonoBehaviour {
       ChangeColor();
     }
 	}
+  
+  public GameObject getSelectedCell() {
+    return GameObject.Find("OthelloTable/Cell(" + _selectX + "," + _selectZ + ")");
+  }
 }

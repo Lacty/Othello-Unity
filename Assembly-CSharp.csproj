@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\OthelloSelect.cs" />
+     <Compile Include="Assets\Scripts\OthelloStone.cs" />
      <Compile Include="Assets\Scripts\OthelloTableView.cs" />
+     <Compile Include="Assets\Scripts\Stone.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
