@@ -20,6 +20,7 @@ public class OthelloStone : MonoBehaviour {
   private OthelloSelect _othello = null;
   
   private bool _isBlack = true;
+  private Player _player = Player.Black;
   
   void Start() {
     _othello = GameObject.Find("OthelloSelect").GetComponent<OthelloSelect>();
@@ -32,7 +33,9 @@ public class OthelloStone : MonoBehaviour {
     
     CreateStone(_othello.SelectX, _othello.SelectZ);
     
-    _isBlack = !_isBlack;
+    _player = _player == Player.Black
+              ? Player.White
+              : Player.Black;
   }
   
   void CreateStone(int x, int z) {
@@ -40,6 +43,6 @@ public class OthelloStone : MonoBehaviour {
     stone.name = string.Format("Stone({0},{1})", x, z);
     stone.transform.SetParent(_othello.getSelectedCell().transform);
     stone.transform.localPosition = Vector3.up;
-    stone.transform.localRotation = Quaternion.AngleAxis(_isBlack ? 180f : 0f, Vector3.left);
+    stone.transform.localRotation = Quaternion.AngleAxis(_player == Player.Black ? 180f : 0f, Vector3.left);
   }
 }

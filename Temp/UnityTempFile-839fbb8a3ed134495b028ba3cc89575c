@@ -69,7 +69,6 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/CellState.cs'
-'Assets/Scripts/OthelloPlayer.cs'
 'Assets/Scripts/OthelloSelect.cs'
 'Assets/Scripts/OthelloStone.cs'
 'Assets/Scripts/OthelloTableView.cs'

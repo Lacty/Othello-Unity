@@ -6,6 +6,8 @@ public class OthelloSelect : MonoBehaviour {
   private int WIDTH;
   private int DEPTH;
   
+  private Player _player = Player.Black;
+  
   [SerializeField]
   Material _selected = null;
   public Material SelectedMaterial
@@ -28,16 +30,6 @@ public class OthelloSelect : MonoBehaviour {
     }
   }
   
-  private void ChangeColor() {
-    var cell = GameObject.Find("OthelloTable/Cell(" + _selectX + "," + _selectZ + ")");
-    cell.GetComponent<Renderer>().material = SelectedMaterial;
-  }
-  
-  private void backColor() {
-    var cell = GameObject.Find("OthelloTable/Cell(" + _selectX + "," + _selectZ + ")");
-    cell.GetComponent<Renderer>().material = NormalMaterial;
-  }
-  
   private int _selectX = 0;
   public int SelectX {
     get { return _selectX; }
@@ -45,6 +37,16 @@ public class OthelloSelect : MonoBehaviour {
   private int _selectZ = 0;
   public int SelectZ {
     get { return _selectZ; }
+  }
+
+  private void ChangeColor() {
+    var cell = GameObject.Find("OthelloTable/Cell(" + _selectX + "," + _selectZ + ")");
+    cell.GetComponent<Renderer>().material = SelectedMaterial;
+  }
+  
+  private void BackColor() {
+    var cell = GameObject.Find("OthelloTable/Cell(" + _selectX + "," + _selectZ + ")");
+    cell.GetComponent<Renderer>().material = NormalMaterial;
   }
 
 	void Start () {
@@ -64,22 +66,22 @@ public class OthelloSelect : MonoBehaviour {
     if (!(keyW || keyA || keyS || keyD)) return;
     
     if (keyW && (_selectX < DEPTH - 1) && (_selectX >= 0)) {
-      backColor();
+      BackColor();
       _selectX++;
       ChangeColor();
     }
     if (keyA && (_selectZ <= WIDTH - 1) && (_selectZ > 0)) {
-      backColor();
+      BackColor();
       _selectZ--;
       ChangeColor();
     }
     if (keyS && (_selectX <= DEPTH - 1) && (_selectX > 0)) {
-      backColor();
+      BackColor();
       _selectX--;
       ChangeColor();
     }
     if (keyD && (_selectZ < WIDTH - 1) && (_selectZ >= 0)) {
-      backColor();
+      BackColor();
       _selectZ++;
       ChangeColor();
     }

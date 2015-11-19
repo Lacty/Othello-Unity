@@ -68,9 +68,11 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
+'Assets/Scripts/CellState.cs'
 'Assets/Scripts/OthelloSelect.cs'
 'Assets/Scripts/OthelloStone.cs'
 'Assets/Scripts/OthelloTableView.cs'
+'Assets/Scripts/Player.cs'
 'Assets/Scripts/Stone.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
