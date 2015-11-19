@@ -17,7 +17,7 @@ public class OthelloTableView : MonoBehaviour {
     }
   }
   
-  void Start () {
+  void Awake() {
     float offset = 1.01f;
     var table = GameObject.Find("OthelloTable");
     for (int d = 0; d < DEPTH; ++d) {
@@ -31,6 +31,8 @@ public class OthelloTableView : MonoBehaviour {
       }
     }
   }
+  
+  void Start () {}
   
   public int GetWidth() {
     return WIDTH;
