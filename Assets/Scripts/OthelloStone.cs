@@ -19,7 +19,6 @@ public class OthelloStone : MonoBehaviour {
   
   private OthelloSelect _othello = null;
   
-  private bool _isBlack = true;
   private Player _player = Player.Black;
   
   void Start() {
@@ -40,6 +39,7 @@ public class OthelloStone : MonoBehaviour {
   
   void CreateStone(int x, int z) {
     var stone = Instantiate(Stone);
+    stone.GetComponent<Stone>().setPlayerType(_player);
     stone.name = string.Format("Stone({0},{1})", x, z);
     stone.transform.SetParent(_othello.getSelectedCell().transform);
     stone.transform.localPosition = Vector3.up;
