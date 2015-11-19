@@ -6,6 +6,8 @@ public class OthelloTableView : MonoBehaviour {
   private int WIDTH = 8;
   private int DEPTH = 8;
   
+  private Player _player;
+  
   [SerializeField]
   private GameObject _cell = null;
   public GameObject Cell{
@@ -18,7 +20,7 @@ public class OthelloTableView : MonoBehaviour {
   }
   
   void Awake() {
-    float offset = 1.01f;
+    float offset = 1.05f;
     var table = GameObject.Find("OthelloTable");
     for (int d = 0; d < DEPTH; ++d) {
       for (int w = 0; w < WIDTH; ++w) {
@@ -33,6 +35,10 @@ public class OthelloTableView : MonoBehaviour {
   }
   
   void Start () {}
+  
+  void Update() {
+    
+  }
   
   public int GetWidth() {
     return WIDTH;

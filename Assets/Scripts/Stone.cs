@@ -4,21 +4,25 @@ using System.Collections;
 
 public class Stone : MonoBehaviour {
   
-  private Player _player;
+  private Player _color;
   
   public bool isBlack() {
-    return _player == Player.Black;
+    return _color == Player.Black;
   }
   public bool isWhite() {
-    return _player == Player.White;
+    return _color == Player.White;
   }
   
   public void setPlayerType(Player type) {
-    _player = type;
+    _color = type;
   }
   
   public void reverse() {
-    _player = isBlack() ? Player.White : Player.Black;
+    _color = isBlack() ? Player.White : Player.Black;
     transform.Rotate(180, 0, 0);
+  }
+  
+  public Player getColor() {
+    return _color;
   }
 }

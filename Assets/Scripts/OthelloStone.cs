@@ -32,7 +32,7 @@ public class OthelloStone : MonoBehaviour {
   void Update() {
     if (!Input.GetKeyDown(KeyCode.Return)) return;
     
-    if (_othello.getSelectedCell().GetComponentInChildren<Stone>()) return;
+    if (_othello.GetSelectedCell().GetComponentInChildren<Stone>()) return;
     
     CreateStone(_othello.SelectX, _othello.SelectZ, _player);
     
@@ -48,5 +48,9 @@ public class OthelloStone : MonoBehaviour {
     stone.transform.SetParent(GameObject.Find("OthelloTable/Cell(" + x + "," + z + ")").transform);
     stone.transform.localPosition = Vector3.up;
     stone.transform.localRotation = Quaternion.AngleAxis(player == Player.Black ? 180f : 0f, Vector3.left);
+  }
+  
+  public Player GetCurrentPlayer() {
+    return _player;
   }
 }
